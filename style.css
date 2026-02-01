@@ -544,3 +544,58 @@ input[type="number"]::placeholder{color:rgba(91,114,105,.7)}
   .utility-logo{width:116px;height:76px;padding:8px 10px;border-radius:12px}
   .company-info__text ul{font-size:17px}
 }
+/* ===== HERO LOGO POSITION FIX (NO HTML CHANGES) ===== */
+
+/* zoom image out + frame face better */
+.hero{
+  background-position: center 18%;
+}
+
+/* layout hero content horizontally on desktop */
+.hero .container{
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: 24px;
+}
+
+/* text stays left */
+.hero__inner{
+  max-width: 720px;
+}
+
+/* logos move to the right */
+.hero__logos{
+  justify-self: end;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px,1fr));
+  gap: 14px;
+}
+
+/* logo size slightly smaller */
+.utility-logo{
+  width: 150px;
+  height: 86px;
+}
+
+/* mobile behavior */
+@media (max-width: 860px){
+  .hero{
+    background-position: center 8%;
+  }
+
+  .hero .container{
+    grid-template-columns: 1fr;
+  }
+
+  .hero__logos{
+    justify-self: start;
+    grid-template-columns: repeat(3, minmax(90px,1fr));
+    margin-top: 16px;
+  }
+
+  .utility-logo{
+    width: 116px;
+    height: 76px;
+  }
+}
